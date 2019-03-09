@@ -88,31 +88,31 @@
                 <hr style="background-color: #010101">
 
             </div>
-                <div class="col-6 col-sm-6 col-lg-6" th:each="carr:${cars}" >
+            <div class="col-6 col-sm-6 col-lg-6" th:each="carr:${cars}" >
 
-                    <div>
-                        <div class="card">
-                            <div class="container">
-                                <span th:text="${carr.manufacturer}"></span>
-                                <span th:text="${carr.year}"></span>
+                <div>
+                    <div class="card">
+                        <div class="container">
+                            <span th:text="${carr.manufacturer}"></span>
+                            <span th:text="${carr.year}"></span>
 
-                                <div th:if="${carr.headshot}!= null">
+                            <div th:if="${carr.headshot}!= null">
                                 <img th:src="${carr.headshot}"/><hr/>
 
-                                </div>
-                                <!--&nbsp-->
-                                <span><a class="btn btn-default" th:href="@{/update_car/{id}(id=${carr.id})}">Edit </a></span>
-                                <span><a class="btn btn-default" th:href="@{/delete_car/{id}(id=${carr.id})}">Delete </a></span>
                             </div>
+                            <!--&nbsp-->
+                            <span><a class="btn btn-default" th:href="@{/update_car/{id}(id=${carr.id})}">Edit </a></span>
+                            <span><a class="btn btn-default" th:href="@{/delete_car/{id}(id=${carr.id})}">Delete </a></span>
                         </div>
                     </div>
-
                 </div>
 
             </div>
-            <!--/row-->
+
         </div>
+        <!--/row-->
     </div>
+</div>
 </div>
 <!-- Footer -->
 <footer class="text-center">
@@ -125,25 +125,19 @@
     $(document).ready(function () {
         // Initialize Tooltip
         $('[data-toggle="tooltip"]').tooltip();
-
         // Add smooth scrolling to all links in navbar + footer link
         $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
-
             // Make sure this.hash has a value before overriding default behavior
             if (this.hash !== "") {
-
                 // Prevent default anchor click behavior
                 event.preventDefault();
-
                 // Store hash
                 var hash = this.hash;
-
                 // Using jQuery's animate() method to add smooth page scroll
                 // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
                 $('html, body').animate({
                     scrollTop: $(hash).offset().top
                 }, 900, function () {
-
                     // Add hash (#) to URL when done scrolling (default click behavior)
                     window.location.hash = hash;
                 });

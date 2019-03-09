@@ -4,6 +4,7 @@ import com.cloudinary.utils.ObjectUtils;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -70,37 +71,37 @@ public class HomeController {
          return "redirect:/";
         }
 
-     @RequestMapping("/detail_car/{id}")
+     @GetMapping("/detail_car/{id}")
      public String detail1(@PathVariable("id") long id, Model model){
         model.addAttribute("cars",carRepository.findById(id).get());
         return "show_car";
      }
 
-    @RequestMapping("/detail_categories/{id}")
+    @GetMapping("/detail_categories/{id}")
     public String detail2(@PathVariable("id") long id, Model model){
         model.addAttribute("categories",categoryRepository.findById(id).get());
         return "show_categories";
     }
-    @RequestMapping("/update_car/{id}")
-    public String update1(@PathVariable("id") long id, Model model){
+    @GetMapping("/update_car/{id}")
+    public String update(@PathVariable("id") long id, Model model){
         model.addAttribute("categories",categoryRepository.findAll());
         model.addAttribute("cars",carRepository.findById(id).get());
         return "carForm";
     }
-    @RequestMapping("/update_categories/{id}")
-     public String update2(@PathVariable("id") long id, Model model){
-      model.addAttribute("categories",categoryRepository.findById(id).get());
-      return "categoriesForm";
-    }
+//    @GetMapping("/update_categories/{id}")
+//     public String update2(@PathVariable("id") long id, Model model){
+//      model.addAttribute("categories",categoryRepository.findById(id).get());
+//      return "categoriesForm";
+//    }
     @RequestMapping("/delete_car/{id}")
-    public String delete1(@PathVariable("id")long id,Model model){
+    public String delete_car(@PathVariable("id") long id, Model model){
         carRepository.deleteById(id);
         return "redirect:/";
     }
-    @RequestMapping("/delete_categories/{id}")
-    public String delete2(@PathVariable("id") long id ){
-        categoryRepository.deleteById(id);
-        return "redirect:/";
-    }
+//    @RequestMapping("/delete_categories/{id}")
+//    public String delete2(@PathVariable("id") long id ){
+//        categoryRepository.deleteById(id);
+//        return "redirect:/";
+//    }
 
 }

@@ -9,10 +9,9 @@ import javax.validation.constraints.NotNull;
 @Table(name = "car")
 public class Car {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     @NotNull
-
     private String manufacturer;
     @NotNull
 
