@@ -70,7 +70,7 @@ public class HomeController {
          return "redirect:/";
         }
 
-     @RequestMapping("/detail_cars/{id}")
+     @RequestMapping("/detail_car/{id}")
      public String detail1(@PathVariable("id") long id, Model model){
         model.addAttribute("cars",carRepository.findById(id).get());
         return "show_car";
@@ -78,7 +78,7 @@ public class HomeController {
 
     @RequestMapping("/detail_categories/{id}")
     public String detail2(@PathVariable("id") long id, Model model){
-        model.addAttribute("cars",categoryRepository.findById(id).get());
+        model.addAttribute("categories",categoryRepository.findById(id).get());
         return "show_categories";
     }
     @RequestMapping("/update_car/{id}")
