@@ -55,7 +55,16 @@
         </div>
     </div>
 </div>
-<h1>In Progress</h1>
+<div th:each="catagor:${categories}" class="text-center">
+    <h1 th:inline="text">Category Name: [[${catagor.name}]]</h1>
+    <h3>Car Under This Category</h3>
+    <div th:each="car:${catagor.cars}">
+         <th:block>
+             <h4 th:text="${car.manufacturer}"></h4>
+         </th:block>
+    </div>
+</div>
+
 
 <script>
     $(document).ready(function () {
