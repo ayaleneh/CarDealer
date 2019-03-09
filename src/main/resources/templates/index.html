@@ -90,40 +90,11 @@
             </div>
                 <div class="col-6 col-sm-6 col-lg-6" th:each="carr:${cars}" >
 
-                    <!--<div class="w3-container" >-->
-
-                        <!--<div class="w3-card-4" style="width:250px;" th:each="carr:${cars}">-->
-                            <!--<header class="w3-container w3-blue">-->
-                                <!--<span><h3 th:text="${carr.manufacturer}"></h3></span>-->
-                                <!--<span><h3 th:text="${carr.year}"></h3></span>-->
-                            <!--</header>-->
-
-                            <!--<div class="w3-container">-->
-
-                                <!--<div th:if="${carr.headshot}!= null">-->
-                                    <!--<img th:src="${carr.headshot}"/><hr/>-->
-
-                                <!--</div>-->
-
-                            <!--</div>-->
-
-                            <!--<footer class="w3-container w3-blue">-->
-                                <!--<span><a class="btn btn-default" th:href="@{/update_car/{id}(id=${carr.id})}">Edit </a></span>-->
-                                <!--<span><a class="btn btn-default" th:href="@{/delete_car/{id}(id=${carr.id})}">Delete </a></span>-->
-                            <!--</footer>-->
-                        <!--</div>-->
-                    <!--</div>-->
-
-
-
-
-
                     <div>
                         <div class="card">
                             <div class="container">
                                 <span th:text="${carr.manufacturer}"></span>
                                 <span th:text="${carr.year}"></span>
-
 
                                 <div th:if="${carr.headshot}!= null">
                                 <img th:src="${carr.headshot}"/><hr/>
@@ -138,12 +109,9 @@
 
                 </div>
 
-                <!--/span-->
             </div>
             <!--/row-->
         </div>
-        <!--/span-->
-
     </div>
 </div>
 <!-- Footer -->
