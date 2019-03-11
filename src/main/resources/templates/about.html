@@ -11,9 +11,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" th:href="@{style.css}" type="text/css">
-    <link rel="stylesheet" href="../static/style.css" type="text/css">
+    <!--<link rel="stylesheet" href="../static/style.css" type="text/css">-->
+
     <style>
 
         body {
@@ -147,7 +146,7 @@
 
         }
         img{
-            width: 250px;
+            width: 350px;
             height: 150px;
         }
         footer a {
@@ -165,6 +164,7 @@
         }
 
     </style>
+
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -205,19 +205,40 @@
         </div>
     </div>
 </div>
-<div th:each="catagor:${categories}" class="text-center">
-    <h1 th:inline="text">Category Name: [[${catagor.name}]]</h1>
-    <h3>Car Under This Category</h3>
-    <div th:each="car:${catagor.cars}">
-         <th:block>
-             <h4 th:text="${car.manufacturer}"></h4>
-             <div th:if="${car.headshot}!= null">
-                 <img th:src="${car.headshot}"/><hr/>
-             </div>
-         </th:block>
+
+
+<div class="container-fluid">
+    <div class="row row-offcanvas row-offcanvas-left">
+
+
+        <div class="col-xs-5 col-sm-3 sidenav-offcanvas sidenav" role="navigation">
+            <div class="content">
+                <br/>
+            </div>
+
+        </div>
+
+
+        <div class="col-xs-12 col-sm-8">
+            <br>
+            <h2>Developer</h2>
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Ayaleneh yilma</strong></p><br>
+                <a href="#demo" data-toggle="collapse">
+                    <img src="https://res.cloudinary.com/dzvnlvrcf/image/upload/v1552305921/jytlf844cnb12wqdneae.jpg" class="img-circle person" />
+                </a>
+
+            </div>
+
+        </div>
     </div>
 </div>
-
+<!-- Footer -->
+<footer class="text-center">
+    <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+    </a><br><br>
+</footer>
 
 <script>
     $(document).ready(function () {
@@ -249,7 +270,7 @@
         });
     })
 </script>
-
+<link rel="stylesheet" th:href="@{style.css}" type="text/css">
 </body>
 
 </html>

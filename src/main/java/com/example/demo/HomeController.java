@@ -27,6 +27,11 @@ public class HomeController {
         model.addAttribute("cars",carRepository.findAll());
         return "index";
     }
+    @RequestMapping("/about")
+    public String about(){
+        return "about";
+    }
+
     @GetMapping("/addcar")
     public String addCar(Model model){
         model.addAttribute("cars",new Car());
