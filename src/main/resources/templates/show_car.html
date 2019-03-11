@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <title>HOME_PAGE</title>
@@ -222,7 +222,7 @@
         <div class="col-xs-12 col-sm-8">
             <br>
 
-            <div class="col-6 col-sm-6 col-lg-6">
+            <div class="col-6 col-sm-6 col-lg-6" th:each="cars:${cars}">
                 <div th:if="${cars.headshot}!= null">
                     <img th:src="${cars.headshot}"/><hr/>
                 </div>
