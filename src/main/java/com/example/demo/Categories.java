@@ -9,11 +9,11 @@ import java.util.Set;
 @Table(name = "Categories")
 public class Categories {
     @Id
-    @GeneratedValue(strategy =GenerationType.AUTO)
+    @GeneratedValue(strategy =GenerationType.IDENTITY)
     private long id;
     @NotNull
     private String name;
-    @OneToMany(mappedBy = "categories", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "categories", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     public Set<Car> cars;
 
     public long getId() {
