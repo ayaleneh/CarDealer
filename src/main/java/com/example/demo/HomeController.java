@@ -1,17 +1,13 @@
 package com.example.demo;
 
 import com.cloudinary.utils.ObjectUtils;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.persistence.Id;
 import javax.validation.Valid;
 import java.io.IOException;
 import java.util.Map;
@@ -95,6 +91,7 @@ public class HomeController {
 //    }
     @RequestMapping("/delete_car/{id}")
     public String delete_car(@PathVariable("id") long id, Model model){
+        model.addAttribute("cars",carRepository.findById(id));
         carRepository.deleteById(id);
         return "redirect:/";
     }
